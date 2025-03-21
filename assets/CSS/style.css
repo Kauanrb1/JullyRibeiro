@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --CorPrincipal-color: #f08cdf; /* Cor principal */
+    --secundária-color: #897f45; /* Cor secundária */
+    --terceira-color: #f8e8a9; /* Cor de fundo */
+    --Quarta-color: #000000; /* Cor do texto */
+    --Quinta-color: #ffffff; /* Cor de fundo do rodapé */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #f8e8a9, #ffffff);
+    font-size: 18px;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--CorPrincipal-color);
+    color: var(--secundária-color);
+    font-size: 20px;
+}
+
+.top-bar p {
+    margin: 0;
+    flex: 1;
+    text-align: center;
+}
+
+.top-bar img {
+    margin-left: auto;
+}
+/* ...existing code... */
+
+.navebar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: 18px;
+}
+
+#MenuIntens {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    font-size: 18px;
+    align-items: center; /* Alinha os itens do menu verticalmente ao centro */
+    padding: 0;
+    margin: 0;
+}
+
+#MenuIntens li {
+    position: relative;
+}
+
+#MenuIntens li a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 18px;
+    padding: 5px 15px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content li {
+    padding: 12px 16px;
+}
+
+.dropdown-content li a {
+    color: black;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content li a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* ...existing code... */
+.banner .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.linha {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.col-2 {
+    flex: 1;
+    padding: 20px;
+}
+
+.col-2 img {
+    max-width: 100%;
+    height: auto;
+}
+
+.Categorias {
+    padding: 20px;
+    background-color: #fff;
+}
+
+.Corpo-categoria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.Corpo-categoria .col-3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px;
+    background-color: #f8e8a9;
+    text-align: center;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.Corpo-categoria .col-3:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.produto-nome {
+    font-weight: 600;
+    font-size: 16px;
+    margin: 10px 0 5px;
+}
+
+.produto-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.descricao {
+    font-size: 14px;
+    color: #555;
+    margin: 5px 0;
+}
+
+/* ...existing code... */
+
+.btn-comprar {
+    background-color: #ff69b4; /* Cor rosa */
+    color: #fff;
+    border: none;
+    padding: 15px 30px; /* Aumentado o padding para um botão maior */
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 25px; /* Cantos arredondados */
+    transition: background 0.3s, transform 0.3s; /* Transição suave */
+    font-size: 16px; /* Tamanho da fonte */
+}
+
+.btn-comprar:hover {
+    background-color: #ff1493; /* Cor rosa mais escura ao passar o mouse */
+    transform: scale(1.05); /* Efeito de aumento ao passar o mouse */
+}
+
+.btn-adicionar-carrinho {
+    background-color: #32cd32; /* Cor verde */
+    color: #fff;
+    border: none;
+    padding: 10px 20px; /* Padding para o botão de adicionar ao carrinho */
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 50%; /* Botão circular */
+    transition: background 0.3s, transform 0.3s; /* Transição suave */
+    font-size: 20px; /* Tamanho da fonte */
+    margin-left: 10px; /* Espaçamento entre os botões */
+}
+
+.btn-adicionar-carrinho:hover {
+    background-color: #228b22; /* Cor verde mais escura ao passar o mouse */
+    transform: scale(1.05); /* Efeito de aumento ao passar o mouse */
+}
+
+/* ...existing code... */
+
+.btn-ver-mais {
+    text-decoration: none;
+    color: var(--CorPrincipal-color);
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--Quinta-color);
+    color: var(--Quarta-color);
+}
+
+footer p {
+    margin: 5px 0; /* Espaçamento entre as linhas do rodapé */
+}
+.menu{
+    background-color: violet;
+    overflow: hidden;
+}
+
+.item{
+    float: left;
+    position: relative;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.item:hover{
+    background-color: white;
+}
+.submenu{
+    display: none;
+    position: absolute;
+    background-color: violet;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.submenu .item{
+    float: none;
+}
+
+.item:hover .submenu{
+    display: block;
+}
+
+/* ...existing code... */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.account-details, .account-actions {
+    margin-top: 20px;
+}
+
+.account-details h2, .account-actions h2 {
+    margin-bottom: 10px;
+}
+
+.account-details p, .account-actions button {
+    margin: 10px 0;
+}
+
+.account-actions button {
+    background-color: var(--CorPrincipal-color);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.account-actions button:hover {
+    background-color: var(--secundária-color);
+    transform: scale(1.05);
+}
+
+/* ...existing code... */
+
+/* ...existing code... */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.cart-items {
+    margin-top: 20px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-item img {
+    width: 100px;
+    height: auto;
+}
+
+.cart-item-details {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.cart-item-price, .cart-item-quantity, .cart-item-remove {
+    margin-left: 20px;
+}
+
+.cart-summary {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.cart-summary h2 {
+    margin-bottom: 10px;
+}
+
+.cart-summary p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.cart-summary button {
+    background-color: var(--CorPrincipal-color);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.cart-summary button:hover {
+    background-color: var(--secundária-color);
+    transform: scale(1.05);
+}
+
+/* ...existing code... */

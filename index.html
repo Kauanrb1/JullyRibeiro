@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Jully Ribeiro</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/CSS/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/img/Icon.png">
+</head>
+<style>
+    .modal {
+        display: none; /* Escondido por padrão */
+        position: fixed; /* Fica fixo na tela */
+        z-index: 1000; /* Fica acima de outros elementos */
+        left: 0;
+        top: 0;
+        width: 100%; /* Largura total */
+        height: 100%; /* Altura total */
+        overflow: auto; /* Permite rolagem se necessário */
+        background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro com transparência */
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto; /* Centraliza o modal */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%; /* Largura do modal */
+        max-width: 500px; /* Largura máxima do modal */
+        border-radius: 10px; /* Cantos arredondados */
+    }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+
+    <header class="top-bar">
+        <p>Bem-vindo à loja Jully Ribeiro!</p>
+        <a href="carrinho.html"><img src="assets/img/Carrinho.png" alt="carrinho Jully Ribeiro" width="40px" id="cartIcon"></a>
+    </header>
+
+    <nav class="navebar">
+        <div class="logo">
+            <img src="assets/img/Logo.png" alt="Logo Jully Ribeiro" width="80px">
+        </div>
+        <ul id="MenuIntens">
+            <li><a href="index.html">Início</a></li>
+            <li class="dropdown">
+                <a href="#" id="produtosLink">Produtos</a>
+                <ul class="dropdown-content">
+                    <li><a href="#">Laços</a></li>
+                    <li><a href="#">Tiaras</a></li>
+                    <li><a href="#">Pulseiras</a></li>
+                    <li><a href="#">Roupas Personalizadas</a></li>
+                </ul>
+            </li>
+            <li><a href="minha-conta.html">Minha Conta</a></li>
+            <li><a href="carrinho.html">Carrinho</a></li>
+        </ul>
+    </nav>
+
+    <div class="banner">
+        <div class="container">
+            <div class="linha">
+                <div class="col-2">
+                    <h1>Escolha um novo estilo<br>para sua criança!</h1>
+                    <p>Conheça nossos produtos e veja como podemos ajudar você a deixar seu filho mais estiloso!</p>
+                    <a href="#" class="btn">Explore Agora &#8594;</a>
+                </div>
+                <div class="col-2">
+                    <img src="assets/img/Imagem1.png" alt="Imagem1" width="50%">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="Categorias">
+        <h2>Produtos em Destaque</h2>
+        <div class="Corpo-categoria">
+            <div class="linha">
+                <div class="col-3">
+                    <img src="assets/img/Laço.jpeg" alt="Laço" class="produto-img">
+                    <p class="produto-nome">Laço - R$10,00</p>
+                    <p class="descricao">Um lindo laço para deixar seu filho ainda mais estiloso.</p>
+                    <button class="btn-comprar" data-name="Laço" data-price="10">Comprar</button>
+                    <button class="btn-adicionar-carrinho" data-name="Laço" data-price="10">+</button>
+                    <a href="#" class="btn-ver-mais" data-name="Laço" data-price="10" data-description="Um lindo laço para deixar seu filho ainda mais estiloso.">Ver Mais</a>
+                </div>
+                <div class="col-3">
+                    <img src="assets/img/Laço1.jpeg" alt="Laço1" class="produto-img">
+                    <p class="produto-nome">Laço1 - R$12,00</p>
+                    <p class="descricao">Um laço colorido que combina com qualquer roupa.</p>
+                    <button class="btn-comprar" data-name="Laço1" data-price="12">Comprar</button>
+                    <button class="btn-adicionar-carrinho" data-name="Laço1" data-price="12">+</button>
+                    <a href="#" class="btn-ver-mais" data-name="Laço1" data-price="12" data-description="Um laço colorido que combina com qualquer roupa.">Ver Mais</a>
+                </div>
+                <div class="col-3">
+                    <img src="assets/img/Laço2.jpeg" alt="Laço2" class="produto-img">
+                    <p class="produto-nome">Laço2 - R$15,00</p>
+                    <p class="descricao">Um laço elegante para ocasiões especiais.</p>
+                    <button class="btn-comprar" data-name="Laço2" data-price="15">Comprar</button>
+                    <button class="btn-adicionar-carrinho" data-name="Laço2" data-price="15">+</button>
+                    <a href="#" class="btn-ver-mais" data-name="Laço2" data-price="15" data-description="Um laço elegante para ocasiões especiais.">Ver Mais</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2>Confirmação de Compra</h2>
+            <p id="modalProductName"></p>
+            <p id="modalProductPrice"></p>
+            <p>Deseja confirmar a compra deste produto?</p>
+            <button id="confirmPurchase" class="btn-comprar">Confirmar Compra</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2023 Jully Ribeiro. Todos os direitos reservados.</p>
+        <p>Contato: contato@jullyribeiro.com.br</p>
+        <p>Endereço: Rua Exemplo, 123 - Cidade, Estado</p>
+        <p>Telefone: (00) 1234-5678</p>
+    </footer>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="assets/JS/app.js"></script>
+    <script src="assets/JS/Untitled-1.js"></script>
+    <script src="assets/JS/cart.js"></script>
+    <script src="assets/JS/filter.js"></script>
+    <script>
+        document.querySelectorAll('.btn-ver-mais').forEach(button => {
+            button.addEventListener('click', function() {
+                const productName = this.getAttribute('data-name');
+                const productPrice = this.getAttribute('data-price');
+                const productDescription = this.getAttribute('data-description');
+                const selectedProduct = { name: productName, price: productPrice, description: productDescription };
+                localStorage.setItem('selectedProduct', JSON.stringify(selectedProduct));
+                window.location.href = 'produto.html';
+            });
+        });
+    </script>
+</body>
+</html>
