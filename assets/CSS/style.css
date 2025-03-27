@@ -35,7 +35,6 @@ body {
 .top-bar img {
     margin-left: auto;
 }
-/* ...existing code... */
 
 .navebar {
     display: flex;
@@ -93,7 +92,6 @@ body {
     display: block;
 }
 
-/* ...existing code... */
 .banner .container {
     display: flex;
     flex-direction: column;
@@ -166,7 +164,9 @@ body {
     margin: 5px 0;
 }
 
-/* ...existing code... */
+button {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
 
 .btn-comprar {
     background-color: #ff69b4; /* Cor rosa */
@@ -182,7 +182,7 @@ body {
 
 .btn-comprar:hover {
     background-color: #ff1493; /* Cor rosa mais escura ao passar o mouse */
-    transform: scale(1.05); /* Efeito de aumento ao passar o mouse */
+    transform: scale(1.3); /* Efeito de aumento ao passar o mouse */
 }
 
 .btn-adicionar-carrinho {
@@ -202,8 +202,6 @@ body {
     background-color: #228b22; /* Cor verde mais escura ao passar o mouse */
     transform: scale(1.05); /* Efeito de aumento ao passar o mouse */
 }
-
-/* ...existing code... */
 
 .btn-ver-mais {
     text-decoration: none;
@@ -253,8 +251,6 @@ footer p {
     display: block;
 }
 
-/* ...existing code... */
-
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -287,10 +283,6 @@ footer p {
     background-color: var(--secundária-color);
     transform: scale(1.05);
 }
-
-/* ...existing code... */
-
-/* ...existing code... */
 
 .container {
     max-width: 1200px;
@@ -353,4 +345,30 @@ footer p {
     transform: scale(1.05);
 }
 
-/* ...existing code... */
+.cart-item-remove {
+    background-color: #ff4d4d; /* Cor vermelha */
+    color: #fff;
+    border: none;
+    padding: 10px 20px; /* Padding para o botão de remover */
+    cursor: pointer;
+    border-radius: 5px; /* Cantos arredondados */
+    transition: background 0.3s, transform 0.3s; /* Transição suave */
+    font-size: 16px; /* Tamanho da fonte */
+    margin-left: 10px; /* Espaçamento entre os botões */
+}
+
+.cart-item-remove:hover {
+    background-color: #ff1a1a; /* Cor vermelha mais escura ao passar o mouse */
+    transform: scale(1.05); /* Efeito de aumento ao passar o mouse */
+}
+
+@media (max-width: 768px) {
+    .navebar {
+        flex-direction: column;
+    }
+
+    .Categorias .linha {
+        flex-direction: column;
+        align-items: center;
+    }
+}
