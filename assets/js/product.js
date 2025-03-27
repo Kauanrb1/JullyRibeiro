@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
         productNameElement.innerText = product.name;
         productImageElement.src = `assets/img/${product.name}.jpeg`;
         productDescriptionElement.innerText = product.description;
-        productPriceElement.innerText = product.price;
+        productPriceElement.innerText = `R$ ${parseFloat(product.price).toFixed(2)}`;
 
         buyButton.addEventListener('click', function() {
             alert(`Compra confirmada para ${product.name}.`);
@@ -24,10 +24,12 @@ document.addEventListener('DOMContentLoaded', function() {
             if (existingProduct) {
                 existingProduct.quantity += 1;
             } else {
-                cart.push({ name: product.name, price: product.price, quantity: 1 });
+                cart.push({ name: product.name, price: parseFloat(product.price), quantity: 1 });
             }
             localStorage.setItem('cart', JSON.stringify(cart));
             alert(`${product.name} foi adicionado ao carrinho.`);
         });
+    } else {
+        console.error('Nenhum produto selecionado.');
     }
 });
